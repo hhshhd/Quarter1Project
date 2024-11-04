@@ -1,0 +1,10 @@
+model_path: "models/llm_model"
+guardrails:
+  input_filter: true
+  output_moderation: true
+  rate_limiting: true
+scenarios:
+  - type: "prompt_injection"
+    enabled: true
+  - type: "jailbreak"
+    enabled: true
