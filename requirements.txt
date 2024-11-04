@@ -3,5 +3,5 @@ pandas
 numpy
 nemoguardrails
 python-dotenv
-langchain-openai
 streamlit
+nest-asyncio
