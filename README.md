@@ -28,7 +28,7 @@ Q1_Project
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/hhshhd/Q1_Project.git
+git clone https://github.com/hhshhd/Quarter1Project.git
 cd Q1_Project
 ```
 ### 2. Install Dependencies
