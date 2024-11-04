@@ -21,7 +21,7 @@ Q1_Project
 │   ├── testdata/            # Small synthetic test data for unit tests
 │   ├── test_etl.py          # Unit tests for ETL functions
 │   └── test_guardrails.py   # Unit tests for guardrails functions
-└── notebooks/               # Jupyter notebooks for analysis and EDA
+└── notebook.ipynb               # Jupyter notebooks for analysis and EDA, and for checkpoint submission
 ```
 
 ## Setup Instructions
