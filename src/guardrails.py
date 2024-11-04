@@ -1,20 +1,18 @@
 import os
 import openai
-import pandas as pd
-from dotenv import load_dotenv
 from nemoguardrails import RailsConfig, LLMRails
 
-# Load environment variables from .env file
-load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai_api_key = "OpenAI-API-key"
+os.environ["OPENAI_API_KEY"] = openai_api_key
 
 class CustomGuardrails:
     def __init__(self):
-        # Load the configuration for guardrails
+        # Initialize NeMo Guardrails with the configuration
         self.config = RailsConfig.from_path("config/config.yml")
         self.rails = LLMRails(self.config)
 
     def generate_response(self, prompt):
+        # Use guardrails to process and generate a response
         response = self.rails.generate(messages=[{
             "role": "user",
             "content": prompt
@@ -22,6 +20,6 @@ class CustomGuardrails:
         return response["content"]
 
     def explain(self):
+        # Return the detailed guardrail application history
         info = self.rails.explain()
         return info.colang_history
-
