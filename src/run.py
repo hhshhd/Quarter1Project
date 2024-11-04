@@ -6,7 +6,7 @@ from guardrails import apply_guardrails  # Import the custom guardrails
 
 # Load environment variables
 load_dotenv()
-openai.api_key = os.getenv("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")
+openai.api_key = os.getenv("OpenAI-API-key")
 
 st.title("NeMo Guardrails Implementation in LLMs")
 
