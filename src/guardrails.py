@@ -8,7 +8,7 @@ os.environ["OPENAI_API_KEY"] = openai_api_key
 class CustomGuardrails:
     def __init__(self):
         # Initialize NeMo Guardrails with the configuration
-        self.config = RailsConfig.from_path("config/config.yml")
+        self.config = RailsConfig.from_path("config.yml")
         self.rails = LLMRails(self.config)
 
     def generate_response(self, prompt):
