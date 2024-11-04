@@ -35,3 +35,15 @@ cd Quarter1Project
 ```
 pip install -r requirements.txt
 ```
+### 3. Run the Steamlit Application
+```
+streamlit run app.py
+```
+### 4. Interacting with the App:
+
+Once the Streamlit app is running, open the provided URL (usually http://localhost:8501) in your browser.
+Test the functionality, including text translation and any guardrail checks you implemented, by inputting various prompts and observing responses.
+
+### 5. Testing Guardrails:
+
+Test the guardrails by inputting phrases that should trigger the profanity or safety checks you set up. You should see outputs reflecting the checks (e.g., messages for blocked or moderated content).
