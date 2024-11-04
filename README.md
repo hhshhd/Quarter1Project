@@ -42,7 +42,7 @@ pip install -r requirements.txt
 ```
 ### 4. Run the Steamlit Application
 ```
-streamlit run app.py
+streamlit run src/run.py
 ```
 ### 5. Interacting with the App:
 
