@@ -35,6 +35,7 @@ In the run.py under src file, there is a requirement of hand typing the OpenAI-A
 ```
 openai_api_key = "OpenAI-API-key"
 ```
+!!!since it needs some credits for using the OpenAI, so if any TA is viewing my code and find out "Error 429 - You exceeded your current quota, please check your plan and billing details" when asking question on streamlit, please contact my email(hhai@ucsd.edu) so that i can provide u my own api key to use to test the result. Otherwise u might need to add some credits to you own openai account. Sorry about the incovenience but since we need to use openAI and their privacy doesn't allow use to share the key online.
 ### 2. Create and Activate a Virtual Environment
 ```
 python3 -m venv env
