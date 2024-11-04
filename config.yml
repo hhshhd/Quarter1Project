@@ -1,10 +1,16 @@
-model_path: "models/llm_model"
 guardrails:
-  input_filter: true
-  output_moderation: true
-  rate_limiting: true
-scenarios:
-  - type: "prompt_injection"
-    enabled: true
-  - type: "jailbreak"
-    enabled: true
+  name: "LLM Guardrails"
+  version: 1.0
+  rules:
+    - rule_name: "Profanity Check"
+      description: "Check if the response contains profanity and block if detected."
+      action_on_fail: "re_prompt"
+      validation_type: "profanity_check"
+    - rule_name: "Content Moderation"
+      description: "Moderate response content for sensitive information."
+      action_on_fail: "warn_user"
+  actions:
+    - name: "re_prompt"
+      description: "Re-asks the prompt if validation fails."
+    - name: "warn_user"
+      description: "Notifies the user if the response is inappropriate."
