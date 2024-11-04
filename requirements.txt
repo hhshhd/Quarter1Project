@@ -1,5 +1,7 @@
-streamlit
 openai
-alt-profanity-check
-nemo_toolkit
+pandas
+numpy
+nemoguardrails
 python-dotenv
+langchain-openai
+streamlit
