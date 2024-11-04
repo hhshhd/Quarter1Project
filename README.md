@@ -31,6 +31,7 @@ Q1_Project
 git clone https://github.com/hhshhd/Quarter1Project.git
 cd Quarter1Project
 ```
+In the run.py under src file, there is a requirement of hand typing the OpenAI-APi-key of your own to run successfuly, since the OpenAI diesn't allow to share my own API key to an online service such as GitHub, you should go [ri ](https://platform.openai.com/api-keys) to generate your own key and replace with my code below in src/run.py.
 ### 2. Create and Activate a Virtual Environment
 ```
 python3 -m venv env
