@@ -1,15 +1,37 @@
-from nemo_toolkit import guardrails
-from alt_profanity_check import predict
-from openai import openai
+# guardrails.py
+from nemoguardrails import Rails, Validator
+import openai
+import os
+from dotenv import load_dotenv
 
-# Profanity check function to use with NeMo guardrails
-def check_profanity(text):
-    """Check for profanity using the alt_profanity_check library."""
-    return predict(text) == 1
+load_dotenv()  # Load environment variables from a .env file
 
-def apply_guardrails(response_text):
-    """Apply NeMo guardrails to the response text."""
-    if check_profanity(response_text):
-        return "Sorry, this response contains inappropriate language and cannot be displayed."
-    return response_text
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
+class CustomGuardrails:
+    """Class to set up and apply guardrails for API calls and responses."""
+    
+    def __init__(self):
+        self.rails = Rails()
+
+    def validate_input(self, user_input):
+        """Validate user input using custom rules."""
+        # Define custom validation logic
+        if len(user_input) < 5:
+            return False, "Input too short."
+        return True, "Input validated."
+
+    def apply_guardrails(self, input_text):
+        """Apply guardrails and make OpenAI API call if validated."""
+        is_valid, message = self.validate_input(input_text)
+        if not is_valid:
+            return message
+
+        # Use OpenAI's API with guardrails
+        response = openai.Completion.create(
+            model="text-davinci-003",
+            prompt=input_text,
+            max_tokens=50
+        )
+        return response.choices[0].text.strip()
 
