@@ -5,6 +5,7 @@ This project explores the use of NVIDIA’s NeMo Guardrails to secure language m
 
 ## Repository Structure
 
+```plaintext
 Q1_Project
 ├── README.md                # Project overview, installation, and usage instructions
 ├── requirements.txt         # Python dependencies
@@ -21,7 +22,7 @@ Q1_Project
 │   ├── test_etl.py          # Unit tests for ETL functions
 │   └── test_guardrails.py   # Unit tests for guardrails functions
 └── notebooks/               # Jupyter notebooks for analysis and EDA
-
+```
 
 ## Setup Instructions
 
@@ -29,7 +30,8 @@ Q1_Project
 ```bash
 git clone https://github.com/your_username/Q1_Project.git
 cd Q1_Project
-
+```
 ### 2. Install Dependencies
+```
 pip install -r requirements.txt
-
+```
