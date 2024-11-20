@@ -31,7 +31,8 @@ Q1_Project
 git clone https://github.com/hhshhd/Quarter1Project.git
 cd Quarter1Project
 ```
-In the run.py under src file, there is a requirement of hand typing the OpenAI-APi-key of your own to run successfuly, since the OpenAI diesn't allow to share my own API key to an online service such as GitHub, you should go [ri ](https://platform.openai.com/api-keys) to generate your own key and replace with my code below in src/run.py.
+#### In the run.py under src file, there is a requirement of hand typing the OpenAI-APi-key of your own to run successfuly, since the OpenAI doesn't allow me to share my own API key to an online service such as GitHub, you should go [this link](https://platform.openai.com/api-keys), create and login in your own OpenAI account to generate your own key and replace with my code below in src/run.py. Replace your key to OpenAI-API-key so that keep the variable as a string type.
+
 ```
 openai_api_key = "OpenAI-API-key"
 ```
