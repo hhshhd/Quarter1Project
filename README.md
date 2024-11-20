@@ -47,9 +47,14 @@ source env/bin/activate  # On Windows: .\env\Scripts\activate
 pip install -r requirements.txt
 ```
 
-# Troubleshooting: Building `annoy` Package on macOS
+### Troubleshooting: Building `annoy` Package on macOS
 
-If you encounter errors while installing the `annoy` package on macOS, such as architecture mismatches (`mach-o file, but is an incompatible architecture`), follow these steps to resolve the issue. First, ensure your Python installation matches your Mac's architecture (`arm64` for Apple Silicon or `x86_64` for Intel) by running `python3 -c "import platform; print(platform.machine())"`. If needed, reinstall Python for `arm64` using `brew install python`. Next, update or reinstall Xcode Command Line Tools with `xcode-select --install` or by removing the old tools with `sudo rm -rf /Library/Developer/CommandLineTools` before reinstalling. Install the required development tools using `brew install llvm` to ensure `clang` and `clang++` are properly configured. If the issue persists, force a recompilation of `annoy` using `ARCHFLAGS="-arch arm64" pip install annoy --no-binary :all:`. On Apple Silicon Macs, you can also try running your terminal under Rosetta 2 by right-clicking "Terminal" in `Applications > Utilities`, selecting "Get Info," and checking "Open using Rosetta" before restarting the terminal. Alternatively, check for prebuilt binary wheels and install them with `pip install annoy --only-binary=:all:`. After installation, verify it by running `python3 -c "import annoy; print(annoy.__version__)"`. If the issue persists, feel free to open an issue or request additional support.
+If you encounter errors while installing the `annoy` package on macOS, such as architecture mismatches (`mach-o file, but is an incompatible architecture`), follow these steps to resolve the issue. 
+
+First, ensure your Python installation matches your Mac's architecture (`arm64` for Apple Silicon or `x86_64` for Intel) by running `python3 -c "import platform; print(platform.machine())"`. If needed, reinstall Python for `arm64` using `brew install python`. 
+
+Next, update or reinstall Xcode Command Line Tools with `xcode-select --install` or by removing the old tools with `sudo rm -rf /Library/Developer/CommandLineTools` before reinstalling. Install the required development tools using `brew install llvm` to ensure `clang` and `clang++` are properly configured. 
+
 
 ### 4. Run the Steamlit Application
 ```
