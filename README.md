@@ -55,6 +55,7 @@ First, ensure your Python installation matches your Mac's architecture (`arm64` 
 
 Next, update or reinstall Xcode Command Line Tools with `xcode-select --install` or by removing the old tools with `sudo rm -rf /Library/Developer/CommandLineTools` before reinstalling. Install the required development tools using `brew install llvm` to ensure `clang` and `clang++` are properly configured. 
 
+If the issue persists, force a recompilation of `annoy` using `ARCHFLAGS="-arch arm64" pip install annoy --no-binary :all:`.
 
 ### 4. Run the Steamlit Application
 ```
